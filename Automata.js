@@ -3,7 +3,7 @@ class Automata {
         this.gameEngine = gameEngine;
         this.width = width;
         this.height = height;
-        this.cellSize = 7; // Size of each cell in pixels
+        this.cellSize = 7;
         this.grid = this.initializeGrid();
     }
 
@@ -15,10 +15,10 @@ class Automata {
             grid[i] = new Array(rows).fill(0);
         }
 
-        // Example: Seed the grid with a random pattern
         for (let i = 0; i < cols; i++) {
             for (let j = 0; j < rows; j++) {
-                grid[i][j] = Math.random() < 0.15 ? 1 : 0; // 20% chance of being alive
+                grid[i][j] = Math.random() < 0.5 ? 1 : 0;
+
             }
         }
 
@@ -65,9 +65,9 @@ class Automata {
         for (let x = 0; x < this.grid.length; x++) {
             for (let y = 0; y < this.grid[x].length; y++) {
                 if (this.grid[x][y] === 1) {
-                    ctx.fillStyle = "black"; // Live cells
+                    ctx.fillStyle = "black";
                 } else {
-                    ctx.fillStyle = "white"; // Dead cells
+                    ctx.fillStyle = "white";
                 }
                 ctx.fillRect(x * this.cellSize, y * this.cellSize, this.cellSize, this.cellSize);
             }

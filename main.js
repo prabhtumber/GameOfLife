@@ -24,14 +24,14 @@ function setupControls() {
 
 	document.getElementById("stopBtn").addEventListener("click", function () {
 		console.log("Stop button clicked");
-		gameEngine.running = false; // This will stop the update loop
+		gameEngine.running = false;
 	});
 
 	document.getElementById("resetBtn").addEventListener("click", function () {
 		console.log("Reset button clicked");
-		gameEngine.running = false; // Stop the loop before resetting
-		automata.grid = automata.initializeGrid(); // Clear or reinitialize the grid
-		automata.draw(gameEngine.ctx); // Draw the initial state of the grid
+		gameEngine.running = false;
+		automata.grid = automata.initializeGrid();
+		automata.draw(gameEngine.ctx);
 	});
 
 
